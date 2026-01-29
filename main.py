@@ -24,7 +24,7 @@ def next_generation(grid):
    
     new_grid = np.zeros_like(grid)
 
-    # Ajout du zero padding
+  
     padded_grid = np.pad(grid, pad_width=1, mode='constant', constant_values=0)
 
     for i in range(1, ROWS + 1):
