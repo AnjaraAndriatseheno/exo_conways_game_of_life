@@ -1,11 +1,10 @@
 import numpy as np
 import time
 
-# Taille de la grille
+
 ROWS = 7
 COLS = 7
 
-# Grille initiale (0 = mort, 1 = vivant)
 frame = np.array([
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 1, 0, 0, 0, 0],
@@ -17,16 +16,12 @@ frame = np.array([
 ])
 
 def count_neighbors(padded_grid, i, j):
-    """
-    Compte le nombre de voisins vivants autour de la cellule (i, j)
-    """
+   
     neighbors = padded_grid[i-1:i+2, j-1:j+2]
     return np.sum(neighbors) - padded_grid[i, j]
 
 def next_generation(grid):
-    """
-    Calcule la génération suivante du jeu de la vie
-    """
+   
     new_grid = np.zeros_like(grid)
 
     # Ajout du zero padding
@@ -46,7 +41,7 @@ def next_generation(grid):
 
     return new_grid
 
-# Boucle principale
+
 generation = 0
 while True:
     print(f"Génération {generation}")
